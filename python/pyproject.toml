@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stashy"
+version = "0.1.0"
+description = "AI-Driven Universal Web Crawler — LangChain + Playwright agent, LLM DOM analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain>=0.1.0",
+  "langchain-openai>=0.0.5",
+  "langchain-community>=0.0.20",
+  "playwright>=1.40.0",
+  "asyncpg>=0.29.0",
+  "httpx>=0.25.0",
+  "pydantic>=2.5.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+stashy-worker = "stashy.worker:main"
+stashy-enqueue = "stashy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["stashy*"]
