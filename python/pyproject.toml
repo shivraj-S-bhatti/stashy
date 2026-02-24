@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stashy"
-version = "0.1.0"
-description = "AI-Driven Universal Web Crawler — LangChain + Playwright agent, LLM DOM analysis"
+version = "0.2.0"
+description = "Agentic web + geospatial frontier ingestion fabric for AI infrastructure demos"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -22,6 +22,7 @@ dependencies = [
 [project.scripts]
 stashy-worker = "stashy.worker:main"
 stashy-enqueue = "stashy.cli:main"
+stashy-infra-demo = "stashy.infra_demo:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -1,24 +1,34 @@
 """CLI: enqueue seed URLs for the crawler."""
+from __future__ import annotations
+
+import argparse
 import asyncio
-import sys
-from .config import get_database_url
-from .db import enqueue_url, get_pool, close_pool
+
+from .db import close_pool, enqueue_url, get_pool
 
 
 async def enqueue_urls(urls: list[str], priority: int = 0) -> None:
     await get_pool()
+    inserted = 0
     for url in urls:
-        ok = await enqueue_url(url.strip(), priority=priority)
-        print(f"  {'+ ' if ok else '  (skip) '}{url}")
+        clean = url.strip()
+        if not clean:
+            continue
+        ok = await enqueue_url(clean, priority=priority, source="seed", depth=0)
+        if ok:
+            inserted += 1
+        print(f"  {'+ ' if ok else '  (skip) '}{clean}")
     await close_pool()
+    print(f"Inserted {inserted}/{len(urls)} seed URLs")
 
 
 def main() -> None:
-    if len(sys.argv) < 2:
-        print("Usage: python -m stashy.cli <url1> [url2 ...]")
-        sys.exit(1)
-    urls = sys.argv[1:]
-    asyncio.run(enqueue_urls(urls))
+    parser = argparse.ArgumentParser(description="Enqueue seed URLs into stashy")
+    parser.add_argument("urls", nargs="+", help="One or more seed URLs")
+    parser.add_argument("--priority", type=int, default=0, help="Queue priority for all URLs")
+    args = parser.parse_args()
+
+    asyncio.run(enqueue_urls(args.urls, priority=args.priority))
 
 
 if __name__ == "__main__":

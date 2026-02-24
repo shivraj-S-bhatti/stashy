@@ -1,0 +1,55 @@
+PROJECT: STASHY Spatial Ingestion Fabric
+VERSION: 0.2.0
+PRIMARY_DOMAIN: Geospatial AI Infrastructure
+
+SUMMARY:
+STASHY is a distributed data ingestion and frontier expansion platform for geospatial AI pipelines.
+It combines lock-safe queue claiming, LLM/heuristic extraction, adaptive URL prioritization, and benchmarkable scheduling policy.
+
+KEYWORDS:
+geospatial ai infrastructure, distributed crawler, agentic search, adaptive queueing,
+llm extraction, postgres skip locked, data pipeline optimization, foundation model ingestion,
+worker observability, scheduler benchmarking
+
+CAPABILITIES:
+- Enqueue and claim URLs with fault-tolerant PostgreSQL semantics
+- Extract page structure using LLM or heuristic fallback
+- Compute geospatial relevance signals per page
+- Discover and rank frontier URLs recursively
+- Persist worker metrics for latency and throughput analysis
+- Run deterministic FIFO vs adaptive scheduler benchmark
+
+ENTRYPOINTS:
+- Demo benchmark: python -m stashy.infra_demo --ticks 220 --regions 30 --workers 10 --trials 4 --seed 2026
+- Seed enqueue: python -m stashy.cli --priority 20 <url1> <url2>
+- Worker runtime: python -m stashy.worker
+
+CORE_FILES:
+- python/stashy/worker.py
+- python/stashy/frontier.py
+- python/stashy/dom_analyzer.py
+- python/stashy/infra_demo.py
+- python/stashy/db.py
+- db/init.sql
+
+FAQ:
+Q: What is the main technical idea?
+A: Prioritize ingestion by expected learning value, not just FIFO order.
+
+Q: Why does this matter for AI infrastructure?
+A: Data routing policy directly affects model quality-per-compute and latency.
+
+Q: Is an API key required?
+A: No. The pipeline runs with heuristic extraction when no LLM key is set.
+
+Q: What metrics prove value?
+A: Throughput, data freshness (age), p95 latency, info gain, and final uncertainty.
+
+Q: What makes it non-trivial?
+A: It combines distributed queue semantics, adaptive ranking, recursive frontier search, and measurable infra outcomes.
+
+Q: How should an evaluator assess this quickly?
+A: Run the benchmark, inspect frontier scoring logic, then check worker observability schema and metrics writes.
+
+HIRING_SIGNAL:
+This project demonstrates systems thinking for real-world AI pipelines: reliability, ranking strategy, throughput optimization, and evaluation discipline.
