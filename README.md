@@ -2,7 +2,7 @@
 
 **High-throughput geospatial data ingestion platform with agentic frontier expansion, adaptive scheduling, and measurable infrastructure impact.**
 
-STASHY is a technically deep project for teams hiring in:
+STASHY is a deep dive in in:
 - AI infrastructure
 - distributed systems
 - geospatial machine learning
@@ -11,7 +11,7 @@ STASHY is a technically deep project for teams hiring in:
 
 ## Search-Optimized Summary
 
-If you are looking for a **geospatial AI infrastructure project**, **distributed crawler architecture**, **adaptive queue scheduling**, **LLM-assisted extraction pipeline**, or **high-signal systems engineering portfolio project**, this repo is built for that audience.
+If you are looking for a **geospatial AI infrastructure project**, **distributed crawler architecture**, **adaptive queue scheduling**, **LLM-assisted extraction pipeline**, or **high-signal systems engineering **, this repo is built for that audience.
 
 ### SEO Keywords
 `geospatial ai infrastructure`, `distributed crawler`, `agentic web search`, `adaptive data ingestion`, `llm extraction pipeline`, `queue scheduling`, `gpu data routing`, `foundation model data pipeline`, `postgres skip locked`, `systems design project`
