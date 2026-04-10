@@ -1,0 +1,10 @@
+https://example.org
+https://www.rust-lang.org
+https://en.wikipedia.org/wiki/Web_crawler
+https://en.wikipedia.org/wiki/Asynchronous_I/O
+https://en.cppreference.com/w/cpp
+https://docs.python.org/3/
+https://curl.se/libcurl/c/libcurl-multi.html
+https://tokio.rs/
+https://docs.rs/reqwest/latest/reqwest/
+https://httpbin.org/html

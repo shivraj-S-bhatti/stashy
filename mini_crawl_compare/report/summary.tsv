@@ -1,0 +1,3 @@
+name	fetched	total	avg_ms	p95_ms	pages_per_sec	pages_per_min	pages_per_day	mb_per_sec	total_bytes	extracted_docs	total_chars
+cpp	10	10	307.2	265.4	6.3	378.0	544320.0	0.3389779186248779	564197	10	96911
+rust	10	10	603.8	913.7	9.19	551.4	794016.0	0.494477313041687	564197	10	96911

@@ -8,6 +8,14 @@ venv/
 *.egg-info/
 dist/
 build/
+mini_crawl_compare/.venv/
+mini_crawl_compare/.cache/
+mini_crawl_compare/.mplconfig/
+mini_crawl_compare/.cargo/
+mini_crawl_compare/.rustup/
+mini_crawl_compare/runs/
+mini_crawl_compare/cpp/crawl_cpp
+mini_crawl_compare/rust/target/
 
 # C++
 cpp/build/
